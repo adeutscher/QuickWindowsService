@@ -8,7 +8,8 @@ public interface IProgramExecutor
     Task<int> RunAsync(string executablePath, string arguments);
 }
 
-internal class ProgramExecutor(ILogger logger) : IProgramExecutor
+// ReSharper disable once SuggestBaseTypeForParameterInConstructor
+internal class ProgramExecutor(ILogger<ProgramExecutor> logger) : IProgramExecutor
 {
     public async Task<int> RunAsync(string executablePath, string arguments)
     {

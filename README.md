@@ -4,11 +4,12 @@
 
 1. Set the following environment variables at the machine level:
 
-* `QUICK_WINDOWS_SERVICE__LOG_PATH`: Path to log to.
-* `QUICK_WINDOWS_SERVICE__LOG_MINIMUM_LEVEL`: Minimum log level
-* `QUICK_WINDOWS_SERVICE__PROGRAM_PATH`
-* `QUICK_WINDOWS_SERVICE__PROGRAM_ARGUMENTS` (optional)
-* `QUICK_WINDOWS_SERVICE__REST_DELAY_SECONDS`
+* `QUICK_WINDOWS_SERVICE__LOG_PATH` : Directory to create logs in
+* `QUICK_WINDOWS_SERVICE__LOG_MINIMUM_LEVEL` : Minimum log level
+* `QUICK_WINDOWS_SERVICE__PROGRAM_PATH` : Path to program to be run
+* `QUICK_WINDOWS_SERVICE__PROGRAM_ARGUMENTS` : Arguments to be passed to program (optional)
+* `QUICK_WINDOWS_SERVICE__REST_DELAY_SECONDS` : Sets the delay between attempts to run the program
+* `QUICK_WINDOWS_SERVICE__EXECUTION_DIRECTORY` : Run program from this directory (optional)
 
 2. The following PowerShell commands declare a service named `QuickService` under a system account.
 

@@ -22,6 +22,11 @@ internal class MainService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        if (!string.IsNullOrWhiteSpace(_configuration.ExecutionDirectory))
+        {
+            Directory.SetCurrentDirectory(_configuration.ExecutionDirectory);
+        }
+
         if (string.IsNullOrWhiteSpace(_configuration.ProgramPath))
         {
             _logger.LogError("No program path set.");
@@ -37,6 +42,7 @@ internal class MainService : BackgroundService
 
     public class ConfigurationModel
     {
+        public string ExecutionDirectory { get; init; }
         public string ProgramPath { get; init; }
         public string ProgramArguments { get; init; }
         public int RestDelaySeconds { get; init; }

@@ -16,7 +16,7 @@
 $sid = [System.Security.Principal.WellKnownSidType]::LocalServiceSid	
 $account = new-object system.security.principal.securityidentifier($sid, $null)
 $serviceUser = $account.Translate([system.security.principal.ntaccount]).value
-sc.exe create QuickService binPath='<path-to-quick-windows-serviec.exe' obj= $serviceUser            
+sc.exe create QuickService binPath='<path-to-quick-windows-service.exe' obj= $serviceUser            
 ```
 
 3. Start the service:
